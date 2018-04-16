@@ -1,2 +1,0 @@
-# SIANIMA
-sistema de intregração
