@@ -83,3 +83,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::resource('fornecedor','ClienteController');
+
+Route::resource('servico','ServicoController');
+

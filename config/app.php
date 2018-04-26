@@ -145,6 +145,7 @@ return [
          * Package Service Providers...
          */
         Way\Generators\GeneratorsServiceProvider::class,
+        MaddHatter\ViewGenerator\ServiceProvider::class,
         Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider::class,
         Reliese\Coders\CodersServiceProvider::class,
         /*

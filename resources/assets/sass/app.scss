@@ -1,8 +1,30 @@
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import url("https://fonts.googleapis.com/css?family=Raleway:350,400,600");
 
 // Variables
 @import "variables";
 
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
+
+@import "fornecedor";
+
+@import "servico";
+
+.col_grid_show {
+    min-width: 30px;
+    max-width: 30px;
+    width: 30px;
+}
+
+.col_grid_edit {
+    min-width: 35px;
+    max-width: 35px;
+    width: 35px;
+}
+
+.col_grid_delete {
+    min-width: 35px;
+    max-width: 35px;
+    width: 35px;
+}
