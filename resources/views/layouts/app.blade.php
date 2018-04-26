@@ -11,7 +11,9 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Styles -->
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">	
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     </head>
     <body>
         <div id="app">
@@ -32,7 +34,8 @@
                                     Cadastros
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownCad">
-                                    <a class="dropdown-item" href="{{ route('clientes') }}">Cliente</a>
+                                    <a class="dropdown-item" href="{{ route('fornecedor.index') }}">Fornecedores</a>
+                                    <a class="dropdown-item" href="{{ route('servico.index') }}">Serviços</a>
                                     <a class="dropdown-item" href="#">Fornecedor</a>
                                     <a class="dropdown-item" href="#">Another action</a>
                                     <div class="dropdown-divider"></div>
@@ -73,9 +76,23 @@
             </nav>
 
             @yield('content')
+            <footer class="fixed-bottom ">
+                <div class="row">
+                    <div class="col-md-12 justify-content-end" style="text-align: end">teste de footer</div>
+                </div>
+
+                <!--@yield('footer')-->
+            </footer>
         </div>
 
+
         <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}"></script>
+        <script>
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+        </script>
+        <script src="{{ asset('js/app.js') }}"></script
+        
     </body>
 </html>

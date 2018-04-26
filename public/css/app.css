@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);/*!
+@import url(https://fonts.googleapis.com/css?family=Raleway:350,400,600);/*!
  * Bootstrap v4.1.0 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
  * Copyright 2011-2018 Twitter, Inc.
@@ -10386,5 +10386,71 @@ a.text-dark:focus {
   .table-bordered td {
     border: 1px solid #dee2e6 !important;
   }
+}
+
+.col_for_cnpj_cpf {
+  min-width: 200px;
+  max-width: 200px;
+  width: 200px;
+}
+
+.col_for_razao_social {
+  min-width: 520px;
+  max-width: 520px;
+  width: 520px;
+}
+
+.col_for_nome_fantasia {
+  min-width: 420px;
+  max-width: 420px;
+  width: 420px;
+}
+
+.col_for_telefone {
+  min-width: 160px;
+  max-width: 160px;
+  width: 160px;
+}
+
+.col_for_contato {
+  min-width: 250px;
+  max-width: 250px;
+  width: 250px;
+}
+
+.col_for_email {
+  min-width: 200px;
+  max-width: 200px;
+  width: 200px;
+}
+
+.col_srv_id {
+  min-width: 90px;
+  max-width: 90px;
+  width: 90px;
+}
+
+.col_srv_descricao {
+  min-width: 520px;
+  max-width: 520px;
+  width: 520px;
+}
+
+.col_grid_show {
+  min-width: 30px;
+  max-width: 30px;
+  width: 30px;
+}
+
+.col_grid_edit {
+  min-width: 35px;
+  max-width: 35px;
+  width: 35px;
+}
+
+.col_grid_delete {
+  min-width: 35px;
+  max-width: 35px;
+  width: 35px;
 }
 
