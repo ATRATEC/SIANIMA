@@ -55,12 +55,7 @@ class ServicoController extends Controller
         if ($validator->fails()) {
             return back()
                         ->withErrors($validator)
-                        ->withInput();
-            
-//            return response()->json([
-//                        'error' => 'Validação falhou',
-//                        'message' => $validator->errors()->all(),
-//                            ], 422);
+                        ->withInput();            
         }
 
         $servico = new Servico();
@@ -87,8 +82,7 @@ class ServicoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Servico $servico)
-    {
-        //
+    {        
         return view('servico.edit',['servico'=>$servico]);
     }
 
@@ -101,7 +95,17 @@ class ServicoController extends Controller
      */
     public function update(Request $request, Servico $servico)
     {
-        //
+        $validator = $this->ValitationUpdate($request, $servico);
+
+        if ($validator->fails()) {
+            return back()
+                        ->withErrors($validator)
+                        ->withInput();            
+        }
+        
+        $servico->fill($request->all());
+        $servico->save();
+        return back()->with('success', 'Serviço atualizado.');
     }
 
     /**

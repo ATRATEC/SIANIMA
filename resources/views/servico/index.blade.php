@@ -39,16 +39,16 @@
                         <tbody>
                             @foreach ($servicos as $servico)
                             <tr>
-                                <td class="col_grid_show"><a class="btn btn-primary" href="{{ route('servico.show',$servico->id) }}" data-toggle="tooltip" data-placement="bottom" title="Exibir" ><i class="far fa-file-alt fa-lg"></i></a></td>
-                                <td class="col_grid_edit"><a class="btn btn-info" href="{{ route('servico.edit',$servico->id) }}" data-toggle="tooltip" data-placement="bottom" title="Editar"><i class="far fa-edit fa-lg"></i></a></td>
+                                <td class="col_grid_show"><a href="{{ route('servico.show',$servico->id) }}" data-toggle="tooltip" data-placement="bottom" title="Exibir" ><i class="far fa-file-alt"></i></a></td>
+                                <td class="col_grid_edit"><a href="{{ route('servico.edit',$servico->id) }}" data-toggle="tooltip" data-placement="bottom" title="Editar"><i class="far fa-edit"></i></a></td>
                                 <td class="col_grid_delete">
                                     <!--                                    <form action="{{action('ServicoController@destroy', $servico->id)}}" method="post">
                                                                             {{csrf_field()}}
                                                                             <input name="_method" type="hidden" value="DELETE">
                                                                             <button class="btn btn-danger" type="submit" data-toggle="tooltip" data-placement="bottom" title="Excluir"><i class="far fa-trash-alt fa-lg"></i></button>
                                                                         </form>-->
-                                    <button class="btn btn-danger" onclick='exibeMsg({{ $servico->id }})' name="button" id="button" type="button" data-toggle="tooltip" data-placement="bottom" title="Excluir"><i class="far fa-trash-alt fa-lg"></i></button>
-
+                                    <!--<button class="btn btn-danger" onclick='exibeMsg({{ $servico->id }})' name="button" id="button" type="button" data-toggle="tooltip" data-placement="bottom" title="Excluir"><i class="far fa-trash-alt"></i></button>;;-->
+                                    <a onclick='exibeMsg({{ $servico->id }})' data-toggle="tooltip" data-placement="bottom" title="Excluir"><i class="far fa-trash-alt" style="color: red"></i></a>
 <!--<a class="btn" href="{{ route('home') }}" data-toggle="tooltip" data-placement="bottom" title="Excluir"><i class="far fa-trash-alt fa-lg"></i></a>-->
                                 </td>
                                 <td class="col_srv_id">{{ $servico->id }}</td>
