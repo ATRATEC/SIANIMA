@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
 use Validator;
+use Illuminate\Validation\Rule;
+use App\Exceptions\APIException;
 
 class ServicoController extends Controller
 {

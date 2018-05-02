@@ -2,82 +2,65 @@
 
 @section('content')
 <div class="container">
-    <div class="card">
-        <div class="card-header">
-            <div class="row justify-content-start">
-                <div class="col-md-1 margin-tb justify-content-start">
-                    <div class="pull-left justify-content-start" style="text-align: left">
-                        <a class="btn btn-primary" href="{{ route('home') }}" data-toggle="tooltip" data-placement="bottom" title="Voltar"><i class="fas fa-arrow-circle-left fa-lg"></i></a>
-                    </div>
+
+    <div class="col-md-12" style="width:99%; margin-left:-15px">
+        <div class="box box-default">
+            <div class="box-header with-border">
+                
+                <div class="pull-left justify-content-start" style="text-align: left">
+                    <a class="btn btn-success" href="{{ route('home') }}"><i class="fa fa-arrow-circle-left fa-lg"></i></a>
                 </div>
-                <div class="col-md-4 margin-tb justify-content-start">
-                    <div class="pull-left justify-content-start" style="text-align: left">
-                        <h2>Serviços</h2>
-                    </div>            
+
+                <div class="pull-right justify-content-end" style="text-align:right; margin-right:32px">
+                    <a class="btn btn-success" href="{{ route('servico.create') }}"><i class="fa fa-truck"></i><span> Novo Serviço</span></a>
                 </div>
-                <div class="col-md-1"></div>
-                <div class="col-md-6 margin-tb justify-content-end">
-                    <div class="pull-right justify-content-end" style="text-align: right">
-                        <a class="btn btn-primary" href="{{ route('servico.create') }}"><i class="fas fa-truck"></i><span> Novo Serviço</span></a>
-                    </div>
-                </div>
+
+                <h3 class="box-title" style="margin-left:3px; margin-top:7px"><b>SERVIÇOS</b></h3>
+              
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                </button>
+              </div>
+              <!-- /.box-tools -->
             </div>
-        </div>
-        <div class="card-body">
-            <div class="row justify-content-center" style="">
-                <div class="col-md-12" style="overflow-x: auto; overflow-y: auto">
-                    <table class="table table-sm">
-                        <thead class="thead-dark">
+            <!-- /.box-header -->
+        <div class="box-body">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead style="background:#eee">
                             <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th class="col_srv_id">Código</th>
-                                <th class="col_srv_descricao">Descricão</th>                                               
+                                <th class="col-md-1"></th>
+                                <th class="col-md-1"></th>
+                                <th class="col-md-1"></th>
+                                <th class="col_srv_id col-md-1">Código</th>
+                                <th class="col_srv_descricao col-md-8">Descricão</th>                                               
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($servicos as $servico)
                             <tr>
-                                <td class="col_grid_show"><a href="{{ route('servico.show',$servico->id) }}" data-toggle="tooltip" data-placement="bottom" title="Exibir" ><i class="far fa-file-alt"></i></a></td>
-                                <td class="col_grid_edit"><a href="{{ route('servico.edit',$servico->id) }}" data-toggle="tooltip" data-placement="bottom" title="Editar"><i class="far fa-edit"></i></a></td>
-                                <td class="col_grid_delete">
-                                    <!--                                    <form action="{{action('ServicoController@destroy', $servico->id)}}" method="post">
-                                                                            {{csrf_field()}}
-                                                                            <input name="_method" type="hidden" value="DELETE">
-                                                                            <button class="btn btn-danger" type="submit" data-toggle="tooltip" data-placement="bottom" title="Excluir"><i class="far fa-trash-alt fa-lg"></i></button>
-                                                                        </form>-->
-                                    <!--<button class="btn btn-danger" onclick='exibeMsg({{ $servico->id }})' name="button" id="button" type="button" data-toggle="tooltip" data-placement="bottom" title="Excluir"><i class="far fa-trash-alt"></i></button>;;-->
-                                    <a onclick='exibeMsg({{ $servico->id }})' data-toggle="tooltip" data-placement="bottom" title="Excluir"><i class="far fa-trash-alt" style="color: red"></i></a>
-<!--<a class="btn" href="{{ route('home') }}" data-toggle="tooltip" data-placement="bottom" title="Excluir"><i class="far fa-trash-alt fa-lg"></i></a>-->
-                                </td>
+                                <td class="col_grid_show"><center><a href="{{ route('servico.show',$servico->id) }}" data-placement="bottom" title="Exibir" ><button class="btn btn-primary" name="button" id="button" type="button" data-toggle="tooltip" data-placement="bottom" title="Exibir" style="width:18px; height:19px; margin-left:6px; padding-top:-2px"><i class="fa fa-file" style="position:absolute; margin-left:-5px; margin-top:-7px"></i></button></a></center></td>
+                                <td class="col_grid_edit"><center><a href="{{ route('servico.edit',$servico->id) }}" data-placement="bottom" title="Editar"><button class="btn btn-primary" name="button" id="button" type="button" data-toggle="tooltip" data-placement="bottom" title="Editar" style="width:18px; height:19px; margin-left:6px; padding-top:-2px"><i class="fa fa-edit" style="position:absolute; margin-left:-5px; margin-top:-7px"></i></button></a></center></td>
+                                <td class="col_grid_delete"><center><a onclick='exibeMsg({{ $servico->id }})' data-placement="bottom" title="Excluir"><button class="btn btn-danger" onclick='exibeMsg({{ $servico->id }})' name="button" id="button" type="button" data-toggle="tooltip" data-placement="bottom" title="Excluir" style="width:18px; height:19px; margin-left:6px; padding-top:-2px"><i class="fa fa-trash" style="position:absolute; margin-left:-5px; margin-top:-7px"></i></button></a></center></td>
                                 <td class="col_srv_id">{{ $servico->id }}</td>
                                 <td class="col_srv_descricao">{{ $servico->descricao }}</td>                                                
                             </tr>                    
                             @endforeach                   
                         </tbody>
                     </table>
-                </div>      
-            </div>            
-        </div>        
-        <div class="card-footer">
-            <div class="row justify-content-end">
-                <nav aria-label="Page navigation example">
-                    {{ $servicos->links('vendor.pagination.bootstrap-4') }}            
-                </nav>        
-            </div>
-        </div>        
+
+                    <div class="container">
+                        <div class="row justify-content-end">
+                            <nav aria-label="Page navigation example">
+                                {{ $servicos->links('vendor.pagination.bootstrap-4') }}            
+                            </nav>        
+                        </div>
+                    </div>
+            </div>        
+       </div>
     </div>
-
-</div>
-<div class="container">
-
 </div>
 @endsection
-
-@section('footer')
-@endsection
-
 @section('script')
 <script>
     function exibeMsg(id){

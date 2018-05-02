@@ -1,24 +1,20 @@
 @extends('layouts.modal')
 @section('content')
 <div class="container">
-    <div class="row justify-content-md-center mt-5">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header justify-content-start" style="text-align: left">
-                    <div class="row justify-content-start">
-                        <div class="col-md-1 margin-tb justify-content-start">
-                            <div class="pull-right justify-content-end" style="text-align: left">
-                                <a class="btn btn-primary" href="{{ route('servico.index') }}" data-toggle="tooltip" data-placement="bottom" title="Voltar"><i class="fas fa-arrow-circle-left fa-lg"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-md-6 margin-tb justify-content-start">
-                            <div class="pull-right">
-                                <h3>Cadastrar Serviço</h3>
-                            </div>            
-                        </div>                        
-                    </div>
-                </div>
-                <div class="card-body">
+    <div class="col-md-12" style="width:98%; margin-left:-15px">
+    <div class="box box-default">
+    <div class="box">
+
+        <div class="box-header with-border">
+
+            <div class="pull-left justify-content-start" style="text-align: left">
+                <a class="btn btn-primary" href="{{ route('servico.index') }}"><i class="fa fa-arrow-circle-left fa-lg"></i></a>
+            </div>
+
+            <h3 class="box-title" style="margin-left:3px; margin-top:7px"><b>SERVIÇOS</b></h3>
+
+        </div>            
+        <div class="box-body">
                     <form class="form-horizontal" method="POST" action="{{ route('servico.store') }}">
                         {{ csrf_field() }}
 
@@ -44,9 +40,9 @@
                         @endif
                         
                         <div class="form-group row">
-                            <label for="descricao" class="col-lg-2 col-form-label text-lg-right">Descrição</label>
+                            <label for="descricao" class="col-lg-1 col-form-label text-lg-right">Descrição</label>
 
-                            <div class="col-lg-10">
+                            <div class="col-lg-11">
                                 <input id="descricao" type="text" class="form-control{{ $errors->has('descricao') ? ' is-invalid' : '' }}" name="descricao" required autofocus>
 
                                 @if ($errors->has('descricao'))
